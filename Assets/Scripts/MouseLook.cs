@@ -7,15 +7,29 @@ public class MouseLook : MonoBehaviour
 {
     [SerializeField] GameObject mainCam;
     float sensitivityX = .1f, sensitivityY = .1f, camClampMin = 320, camClampMax = 45;
-    
+
     // Start is called before the first frame update
     void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
+        }
+
         ClampCameraRotation();
     }
 
