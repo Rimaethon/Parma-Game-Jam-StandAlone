@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGrounded, canJump;
     Vector3 movementInput;
-    float jumpForce = 400f, moveForce = 1000f, maxSpeed = 10f;
+    float jumpForce = 400f, moveForce = 10000f, maxSpeed = 10f;
 
     void Awake()
     {
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     public void HandleMovement()
     {
         //Takes the input vector from Movement() to get movement direction. Also using Vector3.ClampMagnitude to set a max speed. 
-        playerRb.AddForce(movementInput * moveForce, ForceMode.Force);
+        playerRb.AddRelativeForce(movementInput * moveForce, ForceMode.Force);
         playerRb.velocity = Vector3.ClampMagnitude(playerRb.velocity, maxSpeed);
     }
 
