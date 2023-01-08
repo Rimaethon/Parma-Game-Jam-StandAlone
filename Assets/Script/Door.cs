@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
-{ 
+{
+    Mana mana;
     Player player;
     float wait = 1f;
     int Range = 20;
@@ -12,6 +13,7 @@ public class Door : MonoBehaviour
     public void Start()
     {
         player = FindObjectOfType<Player>();
+        mana = FindObjectOfType<Mana>();
     }
     public void Update()
     {
@@ -53,8 +55,9 @@ public class Door : MonoBehaviour
             if (CountDistance() && player.mana == true)
             {
                 PartedDoor.instance.Rebuild();
-                this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                player.manaAmount -= mana.fillMana;
                 yield return new WaitForSeconds(wait);
+                this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
                 DoorHeal = 20;
             }

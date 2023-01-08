@@ -23,5 +23,6 @@ public class PartedDoor : MonoBehaviour
     public void Rebuild()
     {
        anim.SetBool("isBuilding", false);
+
     }
 }

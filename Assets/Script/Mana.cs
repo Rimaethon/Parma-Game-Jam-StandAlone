@@ -6,6 +6,8 @@ public class Mana : MonoBehaviour
 {
     private int Range = 2;
     private Player player;
+    private int FillMana = 20;
+    public int fillMana { get { return FillMana; } set { FillMana = value ;} }
     
 
     public void Start()
@@ -35,7 +37,7 @@ public class Mana : MonoBehaviour
       player.manaAmount++;
       Debug.Log("You Have" + player.manaAmount + "Mana!");
       gameObject.SetActive(false);
-      if(player.manaAmount >= 20)
+      if(player.manaAmount >= fillMana)
       {
           player.mana = true;
       }
