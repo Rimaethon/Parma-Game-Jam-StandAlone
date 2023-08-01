@@ -5851,7 +5851,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 64
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -6102,7 +6102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1727875441
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6119,7 +6119,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1733031746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: de1f2e3411946304c81f8d3355d75c84,
@@ -7993,6 +7994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084615172234174254, guid: d48be793931bc2a4aa9030dd3aa5e88e,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1084615172373386949, guid: d48be793931bc2a4aa9030dd3aa5e88e,
         type: 3}
